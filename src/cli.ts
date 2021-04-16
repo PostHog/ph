@@ -7,6 +7,10 @@ export default class Cli {
         this.commands = []
     }
 
+    remove_line_breaks(str:string):string {
+      return str.replace(/^\s+|\s+$/g, '');
+    }
+
     add(cmd:string):void {
       this.commands.push(cmd)
     }
@@ -17,10 +21,10 @@ export default class Cli {
       return new Promise((accept, reject) => {
         const spawned_process = spawn(cmd_process, cmd_args, { cwd: working_directory});
         spawned_process.stdout.on("data", data => {
-          if(verbose) console.log(`>> ${data}`);
+          if(verbose) console.log(`>> ${this.remove_line_breaks(data.toString())}`);
         });
         spawned_process.stderr.on("data", data => {
-          if(verbose) console.log(`>> ${data}`);
+          if(verbose) console.log(`>> ${this.remove_line_breaks(data.toString())}`);
         });
         spawned_process.on('error', (error) => {
           reject(error.message)

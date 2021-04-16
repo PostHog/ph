@@ -1,6 +1,7 @@
 ph
 ==
 
+Command-line utility to install, run, and manage PostHog.
 
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)

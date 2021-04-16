@@ -9,15 +9,6 @@ Command-line utility to install, run, and manage PostHog.
 [![Downloads/week](https://img.shields.io/npm/dw/ph.svg)](https://npmjs.org/package/ph)
 [![License](https://img.shields.io/npm/l/ph.svg)](https://github.com/buwilliams/ph/blob/master/package.json)
 
-## Planned commands
-
-- `ph install` installs PostHog locally
-- `ph up [--ee]` starts PostHog in a docker container
-- `ph down [--ee]` starts PostHog in a docker container
-- `ph test [--ee]` runs PostHog tests
-- `ph build [--ee]` builds docker images
-- `ph purge` nukes docker containers
-
 ## Table of Contents
 
 <!-- toc -->
@@ -40,12 +31,50 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`ph build [FILE]`](#ph-build-file)
+* [`ph down [FILE]`](#ph-down-file)
 * [`ph hello [FILE]`](#ph-hello-file)
 * [`ph help [COMMAND]`](#ph-help-command)
+* [`ph install [FILE]`](#ph-install-file)
+* [`ph nuke [FILE]`](#ph-nuke-file)
+* [`ph test [FILE]`](#ph-test-file)
+* [`ph up [FILE]`](#ph-up-file)
+
+## `ph build [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ph build [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/build.ts](https://github.com/buwilliams/ph/blob/v0.0.0/src/commands/build.ts)_
+
+## `ph down [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ph down [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/down.ts](https://github.com/buwilliams/ph/blob/v0.0.0/src/commands/down.ts)_
 
 ## `ph hello [FILE]`
 
-describe the command here
+prints hello world
 
 ```
 USAGE
@@ -79,4 +108,68 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
+
+## `ph install [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ph install [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/install.ts](https://github.com/buwilliams/ph/blob/v0.0.0/src/commands/install.ts)_
+
+## `ph nuke [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ph nuke [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/nuke.ts](https://github.com/buwilliams/ph/blob/v0.0.0/src/commands/nuke.ts)_
+
+## `ph test [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ph test [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/test.ts](https://github.com/buwilliams/ph/blob/v0.0.0/src/commands/test.ts)_
+
+## `ph up [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ph up [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/up.ts](https://github.com/buwilliams/ph/blob/v0.0.0/src/commands/up.ts)_
 <!-- commandsstop -->

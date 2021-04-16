@@ -35,9 +35,10 @@ USAGE
 * [`ph down [FILE]`](#ph-down-file)
 * [`ph hello [FILE]`](#ph-hello-file)
 * [`ph help [COMMAND]`](#ph-help-command)
-* [`ph install [FILE]`](#ph-install-file)
+* [`ph install`](#ph-install)
 * [`ph nuke [FILE]`](#ph-nuke-file)
 * [`ph test [FILE]`](#ph-test-file)
+* [`ph uninstall [FILE]`](#ph-uninstall-file)
 * [`ph up [FILE]`](#ph-up-file)
 
 ## `ph build [FILE]`
@@ -109,18 +110,16 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
 
-## `ph install [FILE]`
+## `ph install`
 
-describe the command here
+install posthog
 
 ```
 USAGE
-  $ ph install [FILE]
+  $ ph install
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -v, --verbose
 ```
 
 _See code: [src/commands/install.ts](https://github.com/buwilliams/ph/blob/v0.0.0/src/commands/install.ts)_
@@ -156,6 +155,22 @@ OPTIONS
 ```
 
 _See code: [src/commands/test.ts](https://github.com/buwilliams/ph/blob/v0.0.0/src/commands/test.ts)_
+
+## `ph uninstall [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ ph uninstall [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/uninstall.ts](https://github.com/buwilliams/ph/blob/v0.0.0/src/commands/uninstall.ts)_
 
 ## `ph up [FILE]`
 

@@ -1,12 +1,10 @@
-import {Command, flags} from '@oclif/command'
-import path = require('path')
-import readline = require('readline')
-import CLI from '../cli'
+import {flags} from '@oclif/command'
+import CommandHelper from '../command_helper'
 
 const GITHUB_SSH = 'git@github.com:PostHog/posthog.git';
 const GITHUB_HTTPS = 'https://github.com/PostHog/posthog.git';
 
-export default class Install extends Command {
+export default class Install extends CommandHelper {
   static description = 'install posthog'
 
   static flags = {
@@ -15,33 +13,6 @@ export default class Install extends Command {
   }
 
   static args = []
-
-  getPath(directory: string|void, append:string|void): string {
-    const hasPath = typeof directory !== 'undefined'
-    let out = hasPath ? path.resolve(process.cwd(), directory || '') : process.cwd()
-    if(typeof append === 'string') out = path.resolve(out, append || '')
-    return out;
-  }
-
-  askUser(question: string, options: string[]): Promise<string> {
-    return new Promise((accept, reject) => {
-      const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-      });
-
-      rl.question(`${question} [${options.join(',')}]: `, (answer) => {
-        answer = answer.toLowerCase()
-        if(options.indexOf(answer) === -1) {
-          reject('you gave an invalid answer to a question')
-        } else {
-          accept(answer)
-        }
-        rl.close();
-      });
-
-    });
-  }
 
   async run() {
     const {args, flags} = this.parse(Install)
@@ -53,13 +24,11 @@ export default class Install extends Command {
 
       const sshOrHttps = await this.askUser(`Github clone via SSH or HTTPS?`, ['ssh', 'https'])
 
-      const cli = new CLI()
+      this.cli.add(`git clone ${sshOrHttps === 'ssh' ? GITHUB_SSH : GITHUB_HTTPS } ${repo_dir}`)
 
-      cli.add(`git clone ${sshOrHttps === 'ssh' ? GITHUB_SSH : GITHUB_HTTPS } ${repo_dir}`)
+      //this.log(this.cli.toString())
 
-      this.log(cli.toString())
-
-      await cli.run(flags.verbose)
+      await this.cli.run(flags.verbose)
 
       //this.log(`verbose? ${flags.verbose}`)
       //this.log(`path? ${flags.path}`)

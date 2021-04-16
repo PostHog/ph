@@ -17,27 +17,27 @@ export default class Cli {
           if (error) {
             reject(error.message)
           }
-          if (stderr) {
-            reject(stderr)
-          }
+          //if (stderr) {
+            //console.log('stderr', typeof stderr, stderr === '')
+            //reject(stderr)
+          //}
           accept(stdout)
         });
       })
     }
 
     async run(verbose:boolean): Promise<string|void> {
-      return new Promise((accept, reject) => {
-        this.commands.forEach(async (cmd) => {
-            if(verbose) console.log(`> ${cmd}`)
-            try {
-              const logs = await this.shell(cmd)
-              if(verbose) console.log(`>> ${logs}`)
-            } catch(e) {
-              reject(e)
-            }
-        })
-        accept();
-      })
+      for(let i=0; i<this.commands.length; i++) {
+        let cmd = this.commands[i];
+        if(verbose) console.log(`Running > ${cmd}`)
+        try {
+          const logs = await this.shell(cmd)
+          if(verbose && logs !== '') console.log(`>> ${logs}`)
+        } catch(e) {
+          return Promise.reject(e)
+        }
+      }
+      return Promise.resolve();
     }
 
     toString() {

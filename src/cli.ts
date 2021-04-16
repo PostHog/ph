@@ -11,21 +11,6 @@ export default class Cli {
       this.commands.push(cmd)
     }
 
-    cli_exec(cmd:string): Promise<string|undefined> {
-      return new Promise((accept, reject) => {
-        exec(cmd, (error, stdout, stderr) => {
-          if (error) {
-            reject(error.message)
-          }
-          //if (stderr) {
-            //console.log('stderr', typeof stderr, stderr === '')
-            //reject(stderr)
-          //}
-          accept(stdout)
-        });
-      })
-    }
-
     spawn_child(cmd:string, working_directory:string, verbose:boolean): Promise<string|void> {
       const parts = cmd.split(' ')
       const [cmd_process, ...cmd_args] = parts

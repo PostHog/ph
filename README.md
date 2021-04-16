@@ -119,6 +119,7 @@ USAGE
   $ ph install
 
 OPTIONS
+  -p, --path=path  path to install posthog
   -v, --verbose
 ```
 

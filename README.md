@@ -8,6 +8,19 @@ ph
 [![Downloads/week](https://img.shields.io/npm/dw/ph.svg)](https://npmjs.org/package/ph)
 [![License](https://img.shields.io/npm/l/ph.svg)](https://github.com/buwilliams/ph/blob/master/package.json)
 
+## Planned commands
+
+- `ph install` installs PostHog locally
+- `ph start` starts PostHog in a docker container
+- `ph start --ee`
+- `ph stop` starts PostHog in a docker container
+- `ph test` runs PostHog tests
+- `ph test --ee` runs PostHog Enterprise test suite
+- `ph build` builds the docker images
+- `ph purge` nukes docker containers
+
+## Table of Contents
+
 <!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)

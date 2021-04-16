@@ -1,4 +1,4 @@
-import { exec } from 'child_process'
+import { exec, spawn } from 'child_process'
 
 export default class Cli {
     commands: string[]
@@ -11,7 +11,7 @@ export default class Cli {
       this.commands.push(cmd)
     }
 
-    shell(cmd:string): Promise<string|undefined> {
+    cli_exec(cmd:string): Promise<string|undefined> {
       return new Promise((accept, reject) => {
         exec(cmd, (error, stdout, stderr) => {
           if (error) {
@@ -26,17 +26,37 @@ export default class Cli {
       })
     }
 
-    async run(verbose:boolean): Promise<string|void> {
+    spawn_child(cmd:string, working_directory:string, verbose:boolean): Promise<string|void> {
+      const parts = cmd.split(' ')
+      const [cmd_process, ...cmd_args] = parts
+      return new Promise((accept, reject) => {
+        const spawned_process = spawn(cmd_process, cmd_args, { cwd: working_directory});
+        spawned_process.stdout.on("data", data => {
+          if(verbose) console.log(`>> ${data}`);
+        });
+        spawned_process.stderr.on("data", data => {
+          if(verbose) console.log(`>> ${data}`);
+        });
+        spawned_process.on('error', (error) => {
+          reject(error.message)
+        });
+        spawned_process.on("close", code => {
+          accept();
+        });
+      })
+    }
+
+    async run(working_directory:string, verbose:boolean): Promise<string|void> {
       for(let i=0; i<this.commands.length; i++) {
         let cmd = this.commands[i];
-        if(verbose) console.log(`Running > ${cmd}`)
+        if(verbose) console.log(`> ${cmd}`)
         try {
-          const logs = await this.shell(cmd)
-          if(verbose && logs !== '') console.log(`>> ${logs}`)
+          await this.spawn_child(cmd, working_directory, verbose)
         } catch(e) {
           return Promise.reject(e)
         }
       }
+      this.commands = []
       return Promise.resolve();
     }
 

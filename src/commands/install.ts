@@ -17,6 +17,7 @@ export default class Install extends CommandHelper {
   async run() {
     const {args, flags} = this.parse(Install)
     try {
+      const parent_dir = this.getPath(flags.path)
       const repo_dir = this.getPath(flags.path, 'posthog')
 
       const pathOkay = await this.askUser(`Install posthog at ${repo_dir}?`, ['y', 'n'])
@@ -25,16 +26,11 @@ export default class Install extends CommandHelper {
       const sshOrHttps = await this.askUser(`Github clone via SSH or HTTPS?`, ['ssh', 'https'])
 
       this.cli.add(`git clone ${sshOrHttps === 'ssh' ? GITHUB_SSH : GITHUB_HTTPS } ${repo_dir}`)
+      await this.cli.run(parent_dir, flags.verbose)
 
-      //this.log(this.cli.toString())
+      this.cli.add(`yarn install`)
+      await this.cli.run(repo_dir, flags.verbose)
 
-      await this.cli.run(flags.verbose)
-
-      //this.log(`verbose? ${flags.verbose}`)
-      //this.log(`path? ${flags.path}`)
-      //this.log(`repo dir? ${repo_dir}`)
-      //this.log(`path okay? ${pathOkay}`)
-      //this.log(`ssh or https? ${sshOrHttps}`)
       this.log(`Finished.`)
     } catch(e) {
       this.log(`Install aborted because ${e}.`)

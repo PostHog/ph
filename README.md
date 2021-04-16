@@ -11,12 +11,10 @@ ph
 ## Planned commands
 
 - `ph install` installs PostHog locally
-- `ph start` starts PostHog in a docker container
-- `ph start --ee`
-- `ph stop` starts PostHog in a docker container
-- `ph test` runs PostHog tests
-- `ph test --ee` runs PostHog Enterprise test suite
-- `ph build` builds the docker images
+- `ph up [--ee]` starts PostHog in a docker container
+- `ph down [--ee]` starts PostHog in a docker container
+- `ph test [--ee]` runs PostHog tests
+- `ph build [--ee]` builds docker images
 - `ph purge` nukes docker containers
 
 ## Table of Contents

@@ -25,4 +25,6 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 % ph up # starts posthog with docker on your machine
 % ph down # stops posthog
 % ph test # runs posthog test cases
+% ph help # list all cli commands
+% ph [command] help # show usage for a specific command
 ```

@@ -21,6 +21,6 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 ## Basic commands
 
 ```sh
-ph install
-ph up
+% ph install
+% ph up
 ```

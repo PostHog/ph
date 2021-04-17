@@ -22,5 +22,6 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 
 ```sh
 % ph install
-% ph up
+% ph up # starts posthog on your box with docker
+% ph down # stops posthog
 ```

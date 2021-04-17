@@ -1,18 +1,30 @@
 import { exec, spawn } from 'child_process'
 
 export default class Cli {
-    commands: string[]
-
-    constructor() {
-        this.commands = []
+    async run_sync(payload: string[], working_directory:string, verbose:boolean): Promise<string|void> {
+      for(let i=0; i<payload.length; i++) {
+        let cmd = payload[i];
+        if(verbose) console.log(`> ${cmd}`)
+        try {
+          await this.spawn_child(cmd, working_directory, verbose)
+        } catch(e) {
+          return Promise.reject(e)
+        }
+      }
+      return Promise.resolve();
     }
 
-    remove_line_breaks(str:string):string {
-      return str.replace(/^\s+|\s+$/g, '');
-    }
-
-    add(cmd:string):void {
-      this.commands.push(cmd)
+    async run_async(payload: string[], working_directory:string, verbose:boolean): Promise<string|void> {
+      for(let i=0; i<payload.length; i++) {
+        let cmd = payload[i];
+        if(verbose) console.log(`> ${cmd}`)
+        try {
+          this.spawn_child(cmd, working_directory, verbose)
+        } catch(e) {
+          return Promise.reject(e)
+        }
+      }
+      return Promise.resolve();
     }
 
     spawn_child(cmd:string, working_directory:string, verbose:boolean): Promise<string|void> {
@@ -35,21 +47,7 @@ export default class Cli {
       })
     }
 
-    async run(working_directory:string, verbose:boolean): Promise<string|void> {
-      for(let i=0; i<this.commands.length; i++) {
-        let cmd = this.commands[i];
-        if(verbose) console.log(`> ${cmd}`)
-        try {
-          await this.spawn_child(cmd, working_directory, verbose)
-        } catch(e) {
-          return Promise.reject(e)
-        }
-      }
-      this.commands = []
-      return Promise.resolve();
-    }
-
-    toString() {
-        return `Shell Commands:\n${this.commands.join(`\n`)}`
+    remove_line_breaks(str:string):string {
+      return str.replace(/^\s+|\s+$/g, '');
     }
 }

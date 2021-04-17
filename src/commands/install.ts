@@ -25,15 +25,14 @@ export default class Install extends CommandHelper {
 
       const sshOrHttps = await this.askUser(`Github clone via SSH or HTTPS?`, ['ssh', 'https'])
 
-      this.cli.add(`git clone ${sshOrHttps === 'ssh' ? GITHUB_SSH : GITHUB_HTTPS } ${repo_dir}`)
-      await this.cli.run(parent_dir, flags.verbose)
-
-      this.cli.add(`yarn install`)
-      await this.cli.run(repo_dir, flags.verbose)
+      await this.cli.run_sync([
+        `git clone ${sshOrHttps === 'ssh' ? GITHUB_SSH : GITHUB_HTTPS } ${repo_dir}`
+      ], parent_dir, flags.verbose)
+      await this.cli.run_sync([`yarn install`], repo_dir, flags.verbose)
 
       this.log(`Finished.`)
     } catch(e) {
-      this.log(`Install aborted because ${e}.`)
+      this.log(`[install] aborted because ${e}.`)
       this.exit()
     }
   }

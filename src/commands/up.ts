@@ -1,25 +1,30 @@
-import {Command, flags} from '@oclif/command'
+import {flags} from '@oclif/command'
+import CommandHelper from '../command_helper'
+import path = require('path')
 
-export default class Up extends Command {
+export default class Up extends CommandHelper {
   static description = 'describe the command here'
 
   static flags = {
-    help: flags.help({char: 'h'}),
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
+    verbose: flags.boolean({char: 'v', default: false}),
   }
 
   static args = [{name: 'file'}]
 
   async run() {
     const {args, flags} = this.parse(Up)
+    try {
+      let is_posthog_directory = path.basename(process.cwd()) === 'posthog';
+      if(!is_posthog_directory) throw(`PostHog was not found in this directory`)
 
-    const name = flags.name ?? 'world'
-    this.log(`hello ${name} from /Users/buddy/work/ph/src/commands/up.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
+      this.cli.run_async([
+        `bin/start-frontend`,
+        `docker-compose -f docker-compose.dev.yml up`
+      ], process.cwd(), flags.verbose);
+
+    } catch(e) {
+      this.log(`[up] aborted because ${e}.`)
+      this.exit()
     }
   }
 }

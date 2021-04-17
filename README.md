@@ -28,3 +28,7 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 % ph help           # list all cli commands
 % ph help [command] # show usage for a specific command
 ```
+
+## Project
+
+You can track progress on the [project](PRROJECT.md) page.

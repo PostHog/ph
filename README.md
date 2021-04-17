@@ -7,7 +7,7 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 - `yarn`
 - `git`
 - `nodejs` >= 12
-- `docker` >= 3.3.0
+- `docker` >= 3.3.0 (to support new Apple chips)
 
 ## Install ph
 

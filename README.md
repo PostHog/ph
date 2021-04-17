@@ -21,10 +21,10 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 ## Basic commands
 
 ```sh
-% ph install # clones and installs dependencies on your machine
-% ph up # starts posthog with docker on your machine
-% ph down # stops posthog
-% ph test # runs posthog test cases
-% ph help # list all cli commands
+% ph install        # clones and installs dependencies on your machine
+% ph up             # starts posthog with docker on your machine
+% ph down           # stops posthog
+% ph test           # runs posthog test cases
+% ph help           # list all cli commands
 % ph help [command] # show usage for a specific command
 ```

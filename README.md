@@ -9,11 +9,18 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 - `nodejs` >= 12
 - `docker` >= 3.3.0
 
-## Getting started
+## Install ./ph
 
 ```sh
 % git clone https://github.com/PostHog/ph.git
 % cd ph
 % yarn install
 % yarn link
+```
+
+## Basic commands
+
+```sh
+ph install
+ph up
 ```

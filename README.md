@@ -1,6 +1,6 @@
 ![ph](ph.png "ph")
 
-Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](https://doc.rust-lang.org/cargo/index.html), and [go](https://golang.org/cmd/go/) command-line tools which aim to make localhost development painless for us. While some developers will prefer to manage their own environment, I wanted to provide a simple tool to get up and running with PostHog quick.
+Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](https://doc.rust-lang.org/cargo/index.html), and [go](https://golang.org/cmd/go/) command-line tools which aim to make localhost development painless for us. While some developers will prefer to manage their own environment, I wanted to provide a simple tool to get up and running with PostHog quickly.
 
 ## Prerequisites
 

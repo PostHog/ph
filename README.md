@@ -15,7 +15,7 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 % git clone https://github.com/PostHog/ph.git
 % cd ph
 % yarn install
-% yarn link # puts ph in your path
+% yarn link         # puts ph on your path to run from everywhere
 ```
 
 ## Basic commands

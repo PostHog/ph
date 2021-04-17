@@ -31,4 +31,4 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 
 ## Project
 
-You can track progress on the [project](PRROJECT.md) page.
+You can track progress on the [project](PROJECT.md) page.

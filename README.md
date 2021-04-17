@@ -1,6 +1,6 @@
 ![ph](ph.png "ph")
 
-Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](https://doc.rust-lang.org/cargo/index.html), and [go](https://golang.org/cmd/go/) command-line tools which aim to make development painless for us.
+Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](https://doc.rust-lang.org/cargo/index.html), and [go](https://golang.org/cmd/go/) command-line tools which aim to make localhost development painless for us.
 
 ## Prerequisites
 
@@ -21,7 +21,8 @@ Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](
 ## Basic commands
 
 ```sh
-% ph install
-% ph up # starts posthog on your box with docker
+% ph install # clones and installs dependencies on your machine
+% ph up # starts posthog with docker on your machine
 % ph down # stops posthog
+% ph test # runs posthog test cases
 ```

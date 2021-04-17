@@ -6,7 +6,7 @@ export default class Up extends CommandHelper {
   static description = 'describe the command here'
 
   static flags = {
-    verbose: flags.boolean({char: 'v', default: false}),
+    verbose: flags.boolean({char: 'v', default: true}),
   }
 
   static args = [{name: 'file'}]
@@ -19,7 +19,7 @@ export default class Up extends CommandHelper {
 
       this.cli.run_async([
         `bin/start-frontend`,
-        `docker-compose -f docker-compose.dev.yml up`
+        `docker compose -f docker-compose.dev.yml up`
       ], process.cwd(), flags.verbose);
 
     } catch(e) {

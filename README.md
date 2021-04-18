@@ -26,7 +26,7 @@
 % git clone https://github.com/PostHog/ph.git
 % cd ph
 % yarn install
-% yarn link ph       # puts ph on your path to run from everywhere
+% yarn link ph      # puts ph on your path to run from everywhere
 ```
 
 ## Basic commands

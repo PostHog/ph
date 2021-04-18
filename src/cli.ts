@@ -36,9 +36,10 @@ export default class Cli {
           if(verbose) console.log(`>> ${this.remove_line_breaks(data.toString())}`);
         });
         spawned_process.stderr.on("data", data => {
-          if(verbose) console.log(`>> ${this.remove_line_breaks(data.toString())}`);
+          console.log(`>> ${this.remove_line_breaks(data.toString())}`);
         });
         spawned_process.on('error', (error) => {
+          console.log(`>> ${error.message}`)
           reject(error.message)
         });
         spawned_process.on("close", code => {

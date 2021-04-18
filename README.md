@@ -42,4 +42,8 @@
 
 ## Project status: Experimental
 
-`ph` is experimental and in active development. It's not recommended for use. You can track progress on the [project](PROJECT.md) page. The plan is to make it available once most of the basic commands are finished and tested and the proof of concept verified. There is still a question as to whether this project is worth the effort.
+`ph` is experimental and in active development. It's not recommended for use. You can track progress on the [project](PROJECT.md) page. There are several hurdles before this becomes a widely used project.
+
+1. Basic commands need to be coded and tested.
+2. Answer the question if the project is valuable enough to support the development effort.
+3. Validation from other PostHog developers and the community.

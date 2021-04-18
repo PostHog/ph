@@ -42,4 +42,4 @@
 
 ## Project status: Experimental
 
-`ph` is experimental and in active development. It's not recommended for use. You can track progress on the [project](PROJECT.md) page. The plan is to make it available once most of the basic commands are finished and tested.
+`ph` is experimental and in active development. It's not recommended for use. You can track progress on the [project](PROJECT.md) page. The plan is to make it available once most of the basic commands are finished and tested and the proof of concept verified. There is still a question as to whether this project is worth the effort.

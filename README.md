@@ -40,7 +40,7 @@
 % ph help [command] # show usage for a specific command
 ```
 
-## Project status: Experimental
+## Project status: experimental
 
 `ph` is experimental and in active development. It's not recommended for use. You can track progress on the [project](PROJECT.md) page. There are several hurdles before this becomes a widely used project.
 

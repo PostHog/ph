@@ -40,6 +40,6 @@
 % ph help [command] # show usage for a specific command
 ```
 
-## Project
+## Status
 
 `ph` is experimental and in active development. It's not recommended for use currently. You can track progress on the [project](PROJECT.md) page.

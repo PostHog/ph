@@ -1,6 +1,11 @@
 ![ph](ph.png "ph")
 
-Inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](https://doc.rust-lang.org/cargo/index.html), and [go](https://golang.org/cmd/go/) command-line tools which aim to make localhost development painless for us. While some developers will prefer to manage their own environment, I wanted to provide a simple tool to get up and running with PostHog quickly.
+`ph` is a command-line interface inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](https://doc.rust-lang.org/cargo/index.html), and [go](https://golang.org/cmd/go/) which aim to make localhost development painless for us. While some developers will prefer to manage their own environment, I wanted to provide a simple tool to get up and running with PostHog quickly.
+
+`ph` is also a teaching tool.
+
+1. Some developers may not have intimate knowledge of specific tech used by PostHog, `ph` is also a resource for learning those technologies. 
+2. With many all-in-one tools if you encounter an error you're left guessing what when wrong. `ph` aims to explain it's actions so that you may sort out your specific environment issues. 
 
 ## Prerequisites
 

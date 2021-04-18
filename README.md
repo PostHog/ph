@@ -14,6 +14,12 @@
 - `nodejs` >= 12
 - `docker` >= 3.3.0 (to support new Apple chips)
 
+## Supported operating systems
+
+- macOS (and M1 chips)
+- Ubuntu
+- Windows (via WSL 2)
+
 ## Install ph
 
 ```sh

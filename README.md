@@ -42,4 +42,4 @@
 
 ## Project
 
-You can track progress on the [project](PROJECT.md) page.
+`ph` is experimental and in active development. It's not recommended for use currently. You can track progress on the [project](PROJECT.md) page.

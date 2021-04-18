@@ -7,6 +7,15 @@
 1. Some developers may not have intimate knowledge of specific tech used by PostHog, `ph` is also a resource for learning those technologies. 
 2. With many all-in-one tools if you encounter an error you're left guessing what when wrong. `ph` aims to explain it's actions so that you may sort out your specific environment issues. 
 
+## Vision
+
+- Default option for local dev
+- Used in DevOps
+- Scaffold new features for contributing
+- Perform database tasks
+- Run tests for both PostHog and PostHog EE
+- Used for deployments such as heroku
+
 ## Prerequisites
 
 - `yarn`

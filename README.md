@@ -1,6 +1,6 @@
 ![ph](ph.png "ph")
 
-`ph` is a command-line interface inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](https://doc.rust-lang.org/cargo/index.html), and [go](https://golang.org/cmd/go/) which aim to make localhost development a bit easier. While some developers will prefer to manage their own environment, I wanted to provide a tool to manage PostHog through one tool.
+`ph` is a command-line interface inspired by [heroku](https://devcenter.heroku.com/articles/heroku-cli), [cargo](https://doc.rust-lang.org/cargo/index.html), and [go](https://golang.org/cmd/go/) which aim to make localhost development a bit easier. While some developers will prefer to manage their own environment, I wanted to provide *one* tool to manage PostHog.
 
 `ph` is also a teaching tool.
 
